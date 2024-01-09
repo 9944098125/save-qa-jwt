@@ -1,0 +1,56 @@
+###### REGISTER
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username":"Srinivas Akella",
+    "email":"srinivas72075@yopmail.com",
+    "password":"Srinivas@8",
+    "phone":"7995643201",
+    "image":"https://res.cloudinary.com/dakda5ni3/image/upload/v1703409905/dpaavsozq9b9qkhmqdya.jpg"
+}
+
+####### LOGIN
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email":"srinivas72075@yopmail.com",
+    "password":"Srinivas@8"
+}
+
+###### CREATE QA
+POST http://localhost:5000/api/qa/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk1OWJhOWIyYjAyNzJjNmRjM2RhMzAiLCJpYXQiOjE3MDQzMDQ2ODd9.oLCPWhvN5iES6EMfwO4zPNgoM2NFlBCCRfktDDwqAh4
+
+{
+    "userId":"65959ba9b2b0272c6dc3da30",
+    "toolId":"1",
+    "question":"What is NodeJS ?",
+    "answer":"NodeJS Answer is here",
+    "importance":true
+}
+
+######## GET QA
+GET http://localhost:5000/api/qa/65959ba9b2b0272c6dc3da30/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk1OWJhOWIyYjAyNzJjNmRjM2RhMzAiLCJpYXQiOjE3MDQzMDQ2ODd9.oLCPWhvN5iES6EMfwO4zPNgoM2NFlBCCRfktDDwqAh4
+
+####### UPDATE QA   
+PATCH http://localhost:5000/api/qa/update/6595a07277e8edcc9c8cd935
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk1OWJhOWIyYjAyNzJjNmRjM2RhMzAiLCJpYXQiOjE3MDQzMDQ2ODd9.oLCPWhvN5iES6EMfwO4zPNgoM2NFlBCCRfktDDwqAh4
+
+{
+    "userId":"65959ba9b2b0272c6dc3da30",
+    "toolId":"1",
+    "question":"What is NodeJS ?",
+    "answer":"Updated NodeJS Answer is here",
+    "importance":true
+}
+
+######## DELETE QA  
+DELETE http://localhost:5000/api/qa/delete/6595a07277e8edcc9c8cd935
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTk1OWJhOWIyYjAyNzJjNmRjM2RhMzAiLCJpYXQiOjE3MDQzMDQ2ODd9.oLCPWhvN5iES6EMfwO4zPNgoM2NFlBCCRfktDDwqAh4
