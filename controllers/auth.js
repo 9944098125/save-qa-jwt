@@ -36,7 +36,10 @@ const login = async (req, res, next) => {
 		if (!validUser) {
 			return res.status(404).json({ message: "No User with this Email ❌ !" });
 		}
-		const passwordMatching = bcryptJs.compare(password, validUser.password);
+		const passwordMatching = await bcryptJs.compare(
+			password,
+			validUser.password
+		);
 		if (!passwordMatching) {
 			return res.status(302).json({ message: "Wrong Password Folk 😒 !" });
 		}
